@@ -9,15 +9,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 import { MyDashboardComponent } from './my-dashboard/my-dashboard.component';
 import { MyTableComponent } from './my-table/my-table.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyNavComponent,
     MyDashboardComponent,
-    MyTableComponent,
-    NavbarComponent
+    MyTableComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +33,8 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     MatMenuModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

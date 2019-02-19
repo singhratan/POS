@@ -9,11 +9,28 @@
           </button> 
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink='./dashboard'>Dashboard</a>
-      <a mat-list-item routerLink='./table'>Table</a>
-      <a mat-list-item routerLink='./products/productlist'>Products</a>
-      <a mat-list-item routerLink='./products/new'>Table</a>
-      <a mat-list-item routerLink='./products/edit'>Table</a>
+      <button mat-button>
+        <mat-icon>dialpad</mat-icon>
+         <span> Dashboard</span>
+      </button><br>
+      <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>memory</mat-icon>
+        <span>Products</span>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink='./products/productlist'>
+          <mat-icon>dialpad</mat-icon>
+          <span>Product List</span>
+        </button>
+        <button mat-menu-item routerLink='./products/new'>
+          <mat-icon>loupe</mat-icon>
+          <span> New Product</span>
+        </button>
+        <button mat-menu-item routerLink='./products/edit'>
+          <mat-icon>grid_on</mat-icon>
+          <span>Edit Product</span>
+        </button>
+      </mat-menu>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -22,7 +39,7 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>
-        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="!isHandset$ | async">
           <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
         </button> 
       POS</span>

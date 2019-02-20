@@ -1,3 +1,43 @@
-<p>
-  edit-product works!
-</p>
+<mat-card>    
+    <mat-card-title>    
+        New Product
+    </mat-card-title>    
+    <mat-card-content>    
+        <form [formGroup]="myForm" (ngSubmit)="saveProduct(myForm)">    
+            <table>    
+                <tr>    
+                    <td>    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput placeholder="Code" ([ngModel])="Code" formControlName="Code">    
+                        </mat-form-field>    
+                    </td>    
+                    <td>    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput placeholder="Name" ([ngModel])="Name" formControlName="Name">    
+                        </mat-form-field>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td>    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput placeholder="Purchase Price" ([ngModel])="PurchasePrice" formControlName="PurchasePrice">    
+                        </mat-form-field>    
+                    </td>    
+                    <td>    
+                        <mat-form-field class="demo-full-width">    
+                            <input matInput placeholder="Sale Price" ([ngModel])="SalePrice" formControlName="SalePrice">    
+                        </mat-form-field>    
+                    </td>    
+                </tr>    
+                <tr>    
+                    <td colspan="2" class="content-center">    
+                        <button mat-raised-button color="primary"
+                        matTooltip="Info about the action"
+                        aria-label="Button that displays a tooltip when focused or hovered over">Submit</button>&nbsp;    
+                        <button mat-raised-button color="accent">Clear</button>    
+                    </td>    
+                </tr>    
+            </table>    
+        </form>    
+    </mat-card-content>    
+</mat-card>   

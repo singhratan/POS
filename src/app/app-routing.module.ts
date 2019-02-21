@@ -8,7 +8,7 @@ const routes: Routes = [
   {path:'',redirectTo:'dashboard',pathMatch:'full'},
   {path:'dashboard',component:MyDashboardComponent},
   {path:'table',component:MyTableComponent},
-  {path:'products',loadChildren:()=>ProductsModule}
+  {path:'products/:id',loadChildren:()=>ProductsModule}
 ];
 
 @NgModule({

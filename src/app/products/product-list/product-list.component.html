@@ -1,12 +1,42 @@
 <mat-table #table [dataSource]="dataSource" matSort>
+  <!--
   <ng-container matColumnDef="{{column.id}}" *ngFor="let column of columnNames">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> {{column.value}} </mat-header-cell>
-    <mat-cell *matCellDef="let element">{{element[column.id]}} </mat-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header> {{column.value}}</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element[column.id]}}</mat-cell>
   </ng-container>
+-->
+<ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Sr</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element["position"]}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Code">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Code</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{element["Code"]}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Product</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element["Name"]}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="PurchasePrice">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Purchase Price</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element["PurchasePrice"]}}</mat-cell>
+      </ng-container>
+
+
+      <ng-container matColumnDef="SalePrice">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Sale Price</mat-header-cell>
+          <mat-cell *matCellDef="let element">{{element["SalePrice"]}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Action</mat-header-cell>
+            <mat-cell *matCellDef="let element"><button mat-button clas="mat-raised-button" color="accent" (click)="moveToEditPage(element['Code'])"><mat-icon>description</mat-icon></button></mat-cell>
+          </ng-container>
+
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
-<mat-paginator [length]="100"
-[pageSize]="10"
-[pageSizeOptions]="[5, 10, 25, 100]">
-</mat-paginator>
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

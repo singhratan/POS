@@ -8,24 +8,24 @@
                 <tr>    
                     <td>    
                         <mat-form-field class="demo-full-width">    
-                            <input matInput placeholder="Code" ([ngModel])="Code" formControlName="Code">    
+                            <input matInput placeholder="Code"  formControlName="Code">    
                         </mat-form-field>    
                     </td>    
                     <td>    
                         <mat-form-field class="demo-full-width">    
-                            <input matInput placeholder="Name" ([ngModel])="Name" formControlName="Name">    
+                            <input matInput placeholder="Name" formControlName="Name">    
                         </mat-form-field>    
                     </td>    
                 </tr>    
                 <tr>    
                     <td>    
                         <mat-form-field class="demo-full-width">    
-                            <input matInput placeholder="Purchase Price" ([ngModel])="PurchasePrice" formControlName="PurchasePrice">    
+                            <input matInput placeholder="Purchase Price" formControlName="PurchasePrice">    
                         </mat-form-field>    
                     </td>    
                     <td>    
                         <mat-form-field class="demo-full-width">    
-                            <input matInput placeholder="Sale Price" ([ngModel])="SalePrice" formControlName="SalePrice">    
+                            <input matInput placeholder="Sale Price" formControlName="SalePrice">    
                         </mat-form-field>    
                     </td>    
                 </tr>    
@@ -34,7 +34,7 @@
                         <button mat-raised-button color="primary"
                         matTooltip="Info about the action"
                         aria-label="Button that displays a tooltip when focused or hovered over">Submit</button>&nbsp;    
-                        <button mat-raised-button color="accent">Clear</button>    
+                        <button mat-raised-button color="accent" (click)="backToList()">Clear</button>    
                     </td>    
                 </tr>    
             </table>    

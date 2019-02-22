@@ -6,7 +6,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 
 import {MatFormFieldModule,MatInputModule, MatCardModule, MatOptionModule, 
   MatSelectModule, MatButtonModule, MatDatepickerModule, MatRadioModule, 
-  MatTooltipModule, MatTableModule,MatPaginatorModule, MatSortModule
+  MatTooltipModule, MatTableModule,MatPaginatorModule, MatSortModule,MatIconModule
 } from '@angular/material';
 
 import {ReactiveFormsModule} from '@angular/forms'
@@ -14,7 +14,7 @@ import {CommonModule} from '@angular/common';
 const routes: Routes = [
   {path:'productlist',component:ProductListComponent},
   {path:'new',component:NewProductComponent},
-  {path:'edit',component:EditProductComponent},
+  {path:'edit/:id',component:EditProductComponent},
 ];
 const module=[
   ReactiveFormsModule,
@@ -29,7 +29,8 @@ const module=[
   MatTooltipModule,
   MatTableModule,
   MatPaginatorModule,
-  MatSortModule
+  MatSortModule,
+  MatIconModule
 ]
 @NgModule({
   imports: [

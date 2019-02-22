@@ -14,6 +14,6 @@ export class ProductService {
     return this.products;
   }
   getProduct(Code){
-    return this.products.filter(x=>x.Code==Code)[0];
+    return this.products.filter(x=>x.Code==Code);
   }
 }
